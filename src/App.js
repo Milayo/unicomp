@@ -9,6 +9,8 @@ import { GlobalStyles } from "./Globalstyles";
 import "./App.css";
 import theme from "./theme";
 import SigninPage from "./pages/signin-page/signin-page";
+import SignupPage from "./pages/signup-page/signup-page";
+import DashboardPage from "./pages/dashboard-page/dashboardpage";
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
         <GlobalStyles />
         <Routes>
           <Route path="/" element={<SigninPage />} />
+          <Route path="register" element={<SignupPage />} />
+          <Route path="dashboard" element={<DashboardPage />} />
         </Routes>
       </div>
     </ThemeProvider>

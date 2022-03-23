@@ -4,7 +4,7 @@ import {
   FormLabel,
   Link,
   Text,
-  FormHelperText,
+useMediaQuery,
   InputGroup,
   Input,
   InputRightElement,
@@ -13,11 +13,12 @@ import {
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { SignInContainer } from './signin-component.styles.jsx';
 
-const SigninComponent = () => {
+const SigninComponent = ({display}) => {
    const [show, setShow] = React.useState(false);
-   const handleClick = () => setShow(!show);
+  const handleClick = () => setShow(!show);
+   const [isLessThan400] = useMediaQuery("(max-width: 400px)");
   return (
-    <SignInContainer>
+    <SignInContainer display={display}>
       <Formik
         initialValues={{ email: "", password: "" }}
         validate={(values) => {
@@ -44,24 +45,34 @@ const SigninComponent = () => {
               backgroundColor: "#fff",
               padding: "5rem",
               borderRadius: "2rem",
-              
             }}
+            className="signin-form"
           >
             <FormControl isRequired>
-              <FormLabel htmlFor="email" fontSize="3xl">
+              <FormLabel htmlFor="email" fontSize="2xl">
                 Email address
               </FormLabel>
-              <Input id="email" type="email" size="lg" fontSize="2xl" />
+              <Input
+                id="email"
+                type="email"
+                htmlSize="50"
+                width="auto"
+                fontSize={isLessThan400 ? "1x1" : "2xl"}
+              />
             </FormControl>
             <ErrorMessage name="email" component="div" />
             <FormControl mt={5} mb={5} isRequired>
-              <FormLabel htmlFor="password" size="lg" fontSize="2xl">
+              <FormLabel htmlFor="password" fontSize="2xl">
                 Password
               </FormLabel>
               <InputGroup size="md">
-                <Input pr="13rem" type={show ? "text" : "password"} size="lg" />
-                <InputRightElement width="4.5rem" mt={1}>
-                  <Button h="2.1rem" size="lg" onClick={handleClick}>
+                <Input
+                  pr="13rem"
+                  type={show ? "text" : "password"}
+              
+                />
+                <InputRightElement width="5rem">
+                  <Button h="2.2rem" size="lg" onClick={handleClick}>
                     {show ? "Hide" : "Show"}
                   </Button>
                 </InputRightElement>
@@ -74,30 +85,20 @@ const SigninComponent = () => {
             <br />
             <Button
               type="submit"
-              fontSize="2xl"
+              fontSize={isLessThan400 ? "1x1" : "3xl"}
               colorScheme="teal"
-              mt={7}
+              p={7}
+              mt={10}
               size="lg"
               disabled={isSubmitting}
             >
               SIGN IN
             </Button>
-            <Button
-              colorScheme="teal"
-              fontSize="2xl"
-              p={4}
-              mt={7}
-              ml="15rem"
-              size="lg"
-              disabled={isSubmitting}
-            >
-              SIGN IN WITH GOOGLE
-            </Button>
             <Text fontSize="2xl" mt={9} align="center">
               Don't have an account?
-              <Link color="teal.500" href="#">
+              <Link color="teal.500" href="/register">
                 {" "}
-                Register here.
+                REGISTER HERE
               </Link>
             </Text>
           </Form>
