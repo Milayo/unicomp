@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input, Avatar, AvatarBadge } from "@chakra-ui/react";
+import { Avatar, AvatarBadge } from "@chakra-ui/react";
 
 import { ReactComponent as Logo } from "../../assets/images/logo_school.svg";
 import { ReactComponent as NotificationBell } from "../../assets/icons/notifications_on.svg";

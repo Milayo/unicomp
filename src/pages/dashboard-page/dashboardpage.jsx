@@ -4,7 +4,7 @@ import Layout from '../../components/layout/layout-component';
 const DashboardPage = () => {
   return (
       <Layout>
-          <h1>jnak</h1>
+          
     </Layout>
   )
 }

@@ -9,7 +9,7 @@ export const SignInSection = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 15rem;
+  padding: 5rem;
 
   @media only screen and (max-width: 1200px) {
     width: 100vw;
@@ -58,9 +58,9 @@ export const SigninPageText = styled.h4`
 `;
 
 export const ImageContainer = styled.div`
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   .signin-logo {
-    height: 12rem;
+    height: 10rem;
     fill: white;
     
     @media only screen and (max-width: 500px) {

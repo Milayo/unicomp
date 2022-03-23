@@ -8,7 +8,7 @@ margin: 1rem 1rem;
 `
 export const ImageContainer = styled.div`
   .header-logo {
-    height: 6rem;
+    height: 5rem;
     width: 5rem;
   }
 `;
@@ -16,7 +16,7 @@ export const ImageContainer = styled.div`
 export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
-  width: 24vw;
+  width: 25vw;
   height: 8vh;
   padding: 1rem;
 `;
