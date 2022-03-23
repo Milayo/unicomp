@@ -59,9 +59,9 @@ export const SigninPageText = styled.h4`
 
 export const ImageContainer = styled.div`
   margin-bottom: 2rem;
-  img {
+  .signin-logo {
     height: 12rem;
-    fill="white"
+    fill: white;
     
     @media only screen and (max-width: 500px) {
       height: 10rem;

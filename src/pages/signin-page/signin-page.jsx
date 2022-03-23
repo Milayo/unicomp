@@ -16,7 +16,7 @@ const SigninPage = () => {
     <SigninPageContainer>
       <SignInSection display={display}>
         <ImageContainer>
-          <Logo className="header-logo" style={{ fill: "white" }} />
+          <Logo className="signin-logo"/>
         </ImageContainer>
         <SigninPageText>
           University of Computer Sciences
