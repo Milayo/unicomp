@@ -6,8 +6,11 @@ const Layout = (props) => {
   return (
     <div>
       <Header />
-      <SidebarComponent/>
-      <div className="content">{props.children}</div>
+      <div style={{display: "flex"}}>
+        {" "}
+        <SidebarComponent />
+        <div className="content">{props.children}</div>
+      </div>
     </div>
   );
 }

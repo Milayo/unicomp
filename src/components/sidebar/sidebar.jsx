@@ -9,19 +9,19 @@ import { ReactComponent as FinanceIcon } from "../../assets/icons/credit-card.sv
 const SidebarComponent = () => {
   return (
     <SidebarContainer>
-      <IconContainer>
+      <IconContainer to="#">
         <DashboardIcon className="sidebar-icon" />
         <span>Dashboard</span>
       </IconContainer>
-      <IconContainer>
+      <IconContainer to="#">
         <AcademicsIccon className="sidebar-icon" />
         <span>Academics</span>
       </IconContainer>
-      <IconContainer>
+      <IconContainer to="#">
         <ResourceIcon className="sidebar-icon" />
         <span>Resources</span>
       </IconContainer>
-      <IconContainer>
+      <IconContainer to="#">
         <FinanceIcon className="sidebar-icon" />
         <span>Finance</span>
       </IconContainer>
