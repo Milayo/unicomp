@@ -27,7 +27,7 @@ export const SidebarContainer = styled.div`
   }
 
   span {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 `;
 export const IconContainer = styled(Link)`
@@ -35,13 +35,14 @@ export const IconContainer = styled(Link)`
   flex-direction: column;
   height: 15vh;
   width: 10vw;
-  color: teal;
-  fill: teal;
-
+  cursor: pointer;
+  color: ${({ active }) => (active ? "white" : "teal")};
+  fill: ${({ active }) => (active ? "white" : "teal")};
+  background-color: ${({ active }) => (active ? "rgb(26, 83, 83)" : "none")};
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   @media only screen and (max-width: 800px) {
     width: 20vw;
   }
@@ -51,9 +52,7 @@ export const IconContainer = styled(Link)`
     width: 25vw;
   }
 
-  &:hover,
-  :focus {
-    cursor: pointer;
+  &:hover {
     background-color: rgb(26, 83, 83);
     color: white;
     fill: white;

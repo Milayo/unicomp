@@ -8,11 +8,8 @@ export const HeaderRow = styled.div`
 `;
 export const ImageContainer = styled.div`
   .header-logo {
-    height: 5rem;
+    height: 4rem;
     width: 5rem;
-    @media only screen and (max-width: 600px) {
-      height: 4rem;
-    }
     @media only screen and (max-width: 400px) {
       height: 3rem;
     }
@@ -46,7 +43,7 @@ export const LogoText = styled.h4`
   font-family: "Montserrat Alternates sans-serif";
   font-weight: 700;
   color: teal;
-  margin-left: 1rem;
+  margin-left: .5rem;
 
   @media only screen and (max-width: 1200px) {
     font-size: 2rem;

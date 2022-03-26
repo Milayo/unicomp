@@ -11,6 +11,7 @@ import theme from "./theme";
 import SigninPage from "./pages/signin-page/signin-page";
 import SignupPage from "./pages/signup-page/signup-page";
 import DashboardPage from "./pages/dashboard-page/dashboardpage";
+import AcademicsPage from "./pages/academics-page/academics-page";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/" element={<SigninPage />} />
           <Route path="register" element={<SignupPage />} />
           <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="academics" element={<AcademicsPage />} />
         </Routes>
       </div>
     </ThemeProvider>

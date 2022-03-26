@@ -47,7 +47,7 @@ const SignupComponent = ({ display }) => {
           }, 400);
         }}
       >
-        {({ values, isSubmitting }) => (
+        {({ values, handleChange, isSubmitting }) => (
           <Form
             style={{
               backgroundColor: "#fff",
@@ -65,6 +65,7 @@ const SignupComponent = ({ display }) => {
                 type="email"
                 size="lg"
                 fontSize="2xl"
+                onChange={handleChange}
                 value={values.email}
               />
             </FormControl>
@@ -78,6 +79,7 @@ const SignupComponent = ({ display }) => {
                 type="alphanumeric"
                 size="lg"
                 fontSize="2xl"
+                onChange={handleChange}
                 value={values.matricno}
               />
             </FormControl>
@@ -92,6 +94,7 @@ const SignupComponent = ({ display }) => {
                 htmlSize={50}
                 width="auto"
                 fontSize="2xl"
+                onChange={handleChange}
                 value={values.name}
               />
             </FormControl>
@@ -106,7 +109,12 @@ const SignupComponent = ({ display }) => {
                 Password
               </FormLabel>
               <InputGroup size="md">
-                <Input pr="13rem" type={show ? "text" : "password"} size="lg" />
+                <Input
+                  pr="13rem"
+                  type={show ? "text" : "password"}
+                  size="lg"
+                  onChange={handleChange}
+                />
                 <InputRightElement width="4.5rem" mt={1}>
                   <Button h="2.1rem" size="lg" onClick={handleClick}>
                     {show ? "Hide" : "Show"}
