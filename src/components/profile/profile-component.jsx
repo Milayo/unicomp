@@ -1,16 +1,20 @@
 import React from "react";
-import { Avatar, Button } from "@chakra-ui/react";
+import { Avatar, Button, useMediaQuery } from "@chakra-ui/react";
 import { ProfileContainer, ProfileContent, ProfileSection } from "./profile-component.styles";
 
 const ProfileComponent = () => {
+   const [isLessThan800] = useMediaQuery("(max-width: 800px)");
   return (
     <ProfileContainer>
-      <Button mt={5} mr={5} colorScheme="teal" className="edit-btn">
+      <Button colorScheme="teal" className="edit-btn">
         EDIT
       </Button>
       <ProfileSection>
         <div className="profile-header">
-          <Avatar name="Badejo Tioluwani" size="2xl" />
+          <Avatar
+            name="Badejo Tioluwani"
+            size={isLessThan800 ? "lg" : "2xl"}
+          />
           <h3>Badejo Tioluwani Adejare</h3>
         </div>
 

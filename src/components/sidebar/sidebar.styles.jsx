@@ -4,13 +4,12 @@ import styled from "styled-components";
 export const SidebarContainer = styled.div`
   width: 10vw;
   height: 89vh;
-
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media only screen and (max-width: 800px) {
-    width: 20vw;
+    width: 18vw;
   }
 
   @media only screen and (max-width: 600px) {
@@ -27,7 +26,11 @@ export const SidebarContainer = styled.div`
   }
 
   span {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+
+    @media only screen and (max-width: 600px) {
+      font-size: 1.1rem;
+    }
   }
 `;
 export const IconContainer = styled(Link)`

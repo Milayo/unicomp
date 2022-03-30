@@ -3,17 +3,20 @@ import styled from "styled-components";
 export const CourseListContainer = styled.div`
   background-color: #fff;
   height: 70vh;
-  width: 45vw;
+  width: 44vw;
   border-radius: 1rem;
 
   @media only screen and (max-width: 800px) {
-    width: 70vw;
-    height: 40vh;
+    width: 73vw;
+    height: 45vh;
   }
 
   @media only screen and (max-width: 600px) {
-    width: 70vw;
-    height: 30vh;
+    width: 91vw;
+  }
+  @media only screen and (max-width: 400px) {
+    width: 95vw;
+   
   }
 `;
 
@@ -26,9 +29,14 @@ export const CourseListHeader = styled.div`
   height: 10vh;
   font-size: 1.5rem;
   text-transform: Uppercase;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 
   @media only screen and (max-width: 800px) {
     height: 8vh;
+  }
+  @media only screen and (max-width: 600px) {
+    height: 6vh;
   }
 `;
 
@@ -39,11 +47,11 @@ export const CourseListContent = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  padding-top: 3rem;
+  padding: 2rem 1rem 0 1rem;
 
   @media only screen and (max-width: 800px) {
-   padding-top: 1.5rem;
-   height: 20vh;
+    padding-top: 1.5rem;
+    height: 35vh;
   }
 
   &::-webkit-scrollbar {
@@ -66,10 +74,18 @@ export const CourseListContent = styled.div`
     color: rgb(26, 83, 83);
     font-weight: 500;
     border-bottom: 1px solid grey;
-    
+
+    @media only screen and (max-width: 600px) {
+      margin-bottom: 1.3rem;
+      font-size: 1.2rem;
+    }
 
     li:last-child {
       margin-bottom: 1.2rem;
+
+      @media only screen and (max-width: 600px) {
+        margin-bottom: 1rem;
+      }
     }
   }
 `;

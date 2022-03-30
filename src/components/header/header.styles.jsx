@@ -11,7 +11,7 @@ export const ImageContainer = styled.div`
     height: 4rem;
     width: 5rem;
     @media only screen and (max-width: 400px) {
-      height: 3rem;
+      height: 2.8rem;
     }
   }
 `;

@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-
-
 export const ToggleSidebarContainer = styled.div`
 
 display: none;
@@ -52,5 +50,5 @@ display: none;
 
 export const LogOutContainer = styled.div`
   fill: rgb(26, 83, 83);
-  transform: scale(2.5);
+  transform: scale(2);
 `;

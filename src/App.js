@@ -12,6 +12,7 @@ import SigninPage from "./pages/signin-page/signin-page";
 import SignupPage from "./pages/signup-page/signup-page";
 import DashboardPage from "./pages/dashboard-page/dashboardpage";
 import AcademicsPage from "./pages/academics-page/academics-page";
+import CourseRegPage from "./pages/coursereg/coursereg-page";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="register" element={<SignupPage />} />
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="academics" element={<AcademicsPage />} />
+          <Route path="registration" element={<CourseRegPage />} />
         </Routes>
       </div>
     </ThemeProvider>
