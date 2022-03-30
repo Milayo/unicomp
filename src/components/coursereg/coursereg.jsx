@@ -101,10 +101,8 @@ const CourseRegSection = () => {
     const [total, setTotal] = useState(0);
   const setCheckedItems = (e) => {
       let updatedList = [...selectedList];
-      const courseId = e.target.value;
-      const findCourse = Courses.find(course => course.id == courseId)
       if (e.target.checked) {
-          updatedList = [...selectedList, findCourse]
+          updatedList = [...selectedList, e.target.value];
       } else {
           updatedList.splice(selectedList.indexOf(e.target.value), 1);
       }

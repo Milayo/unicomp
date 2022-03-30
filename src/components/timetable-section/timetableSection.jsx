@@ -20,7 +20,7 @@ const TimetableSection = () => {
     >
       <TableCaption>
         SEMESTER'S TIMETABLE
-        <Button variant="outline" colorScheme="white">
+        <Button variant="outline" colorScheme="white" ml={5}>
           EDIT
         </Button>
       </TableCaption>
