@@ -71,13 +71,19 @@ export const CourseListContent = styled.div`
     list-style: none;
     font-size: 1.3rem;
     margin-bottom: 2rem;
+    width: 18vw;
     color: rgb(26, 83, 83);
     font-weight: 500;
     border-bottom: 1px solid grey;
+    text-align: left;
 
     @media only screen and (max-width: 600px) {
       margin-bottom: 1.3rem;
       font-size: 1.2rem;
+    }
+
+    .remove-btn {
+      margin-left: 5rem;
     }
 
     li:last-child {

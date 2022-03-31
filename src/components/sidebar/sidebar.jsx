@@ -23,7 +23,7 @@ const SidebarComponent = () => {
       </IconContainer>
       <IconContainer to="/registration" active={pathname === "/registration"}>
         <ResourceIcon className="sidebar-icon" />
-        <span>Register Courses</span>
+        <span>Courses</span>
       </IconContainer>
       <IconContainer to="#">
         <FinanceIcon className="sidebar-icon" />

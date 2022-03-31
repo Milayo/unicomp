@@ -14,3 +14,4 @@ const CourseRegPage = () => {
 };
 
 export default CourseRegPage;
+

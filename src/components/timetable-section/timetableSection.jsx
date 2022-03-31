@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Table,
   Thead,
@@ -8,9 +8,12 @@ import {
     Td,
   Button,
   TableCaption,
+  Input,
+  Text,
 } from "@chakra-ui/react";
 
 const TimetableSection = () => {
+  const [isEditing, setIsEditing] = useState(false);
   return (
     <Table
       variant="striped"
@@ -20,8 +23,10 @@ const TimetableSection = () => {
     >
       <TableCaption>
         SEMESTER'S TIMETABLE
-        <Button variant="outline" colorScheme="white" ml={5}>
-          EDIT
+        <Button variant="outline" colorScheme="white" ml={5} onClick={() => {
+          isEditing ? setIsEditing(false) : setIsEditing(true)
+        }}>
+          { isEditing ? "SAVE" : "EDIT"}
         </Button>
       </TableCaption>
       <Thead>
@@ -37,7 +42,7 @@ const TimetableSection = () => {
       <Tbody>
         <Tr>
           <Td>9AM</Td>
-          <Td></Td>
+          <Td>{isEditing ? <Input htmlSize={5}/> : <Text></Text>}</Td>
           <Td></Td>
           <Td></Td>
           <Td></Td>
