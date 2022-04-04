@@ -8,11 +8,16 @@ export const CoursePageContainer = styled.div`
   align-items: center;
   justify-content: center;
 
+  @media only screen and (max-width: 1200px) {
+    height: 100vh;
+  }
+
   @media only screen and (max-width: 800px) {
     width: 82vw;
-    }
+  }
 
   @media only screen and (max-width: 600px) {
     width: 100vw;
+    height: 140vh;
   }
 `;

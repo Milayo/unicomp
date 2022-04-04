@@ -15,8 +15,10 @@ export const DashboardContainer = styled.div`
   }
   @media only screen and (max-width: 600px) {
     width: 95vw;
-    margin: 0 .8rem;
-    padding: 1rem .5rem;
+    margin: 0 0.8rem;
+    padding: 1rem 0.5rem;
+    height: 110vh;
+    justify-content: space-around;
   }
 
   @media only screen and (max-width: 400px) {

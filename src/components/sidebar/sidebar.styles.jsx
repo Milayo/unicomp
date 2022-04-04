@@ -17,7 +17,7 @@ export const SidebarContainer = styled.div`
     z-index: 1;
     position: fixed;
     height: 10vh;
-    bottom: 2rem;
+    bottom: 0;
     justify-content: space-around;
     padding: 0 1.5rem;
     background-color: #fff;
@@ -53,6 +53,7 @@ export const IconContainer = styled(Link)`
   @media only screen and (max-width: 600px) {
     height: 10vh;
     width: 25vw;
+   
   }
 
   &:hover {

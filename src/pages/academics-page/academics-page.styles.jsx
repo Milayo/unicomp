@@ -14,6 +14,7 @@ export const AcademicsPageContainer = styled.div`
   }
   @media only screen and (max-width: 600px) {
     width: 95vw;
+    height: 110vh;
   }
 
   @media only screen and (max-width: 400px) {

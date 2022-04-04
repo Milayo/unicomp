@@ -83,7 +83,9 @@ export const CourseListContent = styled.div`
     }
 
     .remove-btn {
-      margin-left: 5rem;
+     display: flex;
+     justify-content: flex-end;
+     cursor: pointer;
     }
 
     li:last-child {
