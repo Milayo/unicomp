@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const AcademicsPageContainer = styled.div`
   background-color: #f1f1f2;
-  padding: 6rem 3.5rem;
   width: 90vw;
   height: 92vh;
   display: flex;
@@ -14,7 +13,6 @@ export const AcademicsPageContainer = styled.div`
   }
   @media only screen and (max-width: 600px) {
     width: 95vw;
-    height: 110vh;
   }
 
   @media only screen and (max-width: 400px) {

@@ -16,7 +16,8 @@ import { SignInContainer } from './signin-component.styles.jsx';
 const SigninComponent = ({display}) => {
    const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
-   const [isLessThan400] = useMediaQuery("(max-width: 400px)");
+  const [isLessThan400] = useMediaQuery("(max-width: 400px)");
+  
   return (
     <SignInContainer display={display}>
       <Formik

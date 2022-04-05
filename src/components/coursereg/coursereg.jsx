@@ -8,7 +8,8 @@ import {
   Td,
   Text,
   Button,
-  useToast
+  useToast,
+  useMediaQuery
 } from "@chakra-ui/react";
 
 import { CourseRegContainer } from "./coursereg.styles.jsx";
@@ -104,15 +105,16 @@ const CourseRegSection = () => {
     new Array(Courses.length).fill(false)
   );
 
-    const toast = useToast();
+  const [isLessThan800] = useMediaQuery("(max-width: 800px)");
+
+  const toast = useToast();
 
   const handleClick = (position) => {
     const updatedCheckedState = checkedItem.map((item, id) =>
       id === position ? !item : item
-      
-    )
+    );
     setCheckedItem(updatedCheckedState);
-    console.log(updatedCheckedState)
+    console.log(updatedCheckedState);
   };
   const setCheckedCourses = (e) => {
     let updatedList = [...selectedList];
@@ -132,14 +134,13 @@ const CourseRegSection = () => {
     setSelectedList([]);
     setCheckedItem(new Array(Courses.length + 1).fill(false));
     toast({
-      title: 'Courses Registered Successfully.',
+      title: "Courses Registered Successfully.",
       description: `You've registered ${total} units.`,
-      status: 'success',
+      status: "success",
       duration: 3000,
       isClosable: true,
-      position: "top"
-    })
-
+      position: "top",
+    });
   };
 
   useEffect(() => {
@@ -151,7 +152,11 @@ const CourseRegSection = () => {
 
   return (
     <CourseRegContainer>
-      <Table variant="striped" colorScheme="teal">
+      <Table
+        variant="striped"
+        colorScheme="teal"
+        size={isLessThan800 ? "sm" : "md"}
+      >
         <Thead>
           <Tr>
             <Th style={{ fontSize: "1.2rem" }} textAlign="center">

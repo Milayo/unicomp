@@ -4,12 +4,18 @@ export const HeaderRow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  @media only screen and (max-width: 600px) {
+    height: 10vh;
+  }
 `;
 export const ImageContainer = styled.div`
   .header-logo {
-    height: 4rem;
+    height: 3.5rem;
     width: 5rem;
+
+    @media only screen and (max-width: 600px) {
+      height: 3rem;
+    }
     @media only screen and (max-width: 400px) {
       height: 2.8rem;
     }
