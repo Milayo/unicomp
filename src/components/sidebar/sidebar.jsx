@@ -25,7 +25,7 @@ const SidebarComponent = () => {
         <ResourceIcon className="sidebar-icon" />
         <span>Courses</span>
       </IconContainer>
-      <IconContainer to="#">
+      <IconContainer to="/payment" active={pathname === "/payment"}>
         <FinanceIcon className="sidebar-icon" />
         <span>Finance</span>
       </IconContainer>
