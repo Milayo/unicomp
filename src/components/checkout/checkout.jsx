@@ -1,0 +1,80 @@
+import React, { useState } from "react";
+
+import { Input, Heading } from "@chakra-ui/react";
+
+import {
+  CheckoutComponentContainer,
+  CheckoutButton,
+} from "./checkout.styles.jsx";
+
+const CheckoutComponent = () => {
+  const [inputData, setInputData] = useState({
+    email: "",
+    name: "",
+    amount: "",
+  });
+
+  const handleChange = (event) => {
+    const { value, name } = event.target;
+
+    setInputData({ ...inputData, [name]: value });
+  };
+
+  const { name, email, amount } = inputData;
+
+  const publicKey = "pk_test_a2a8912dc2ab1d13b8e2bb2e34403d40aee484ed";
+
+  const componentProps = {
+    email,
+    amount,
+    metadata: {
+      name,
+    },
+    publicKey,
+    text: "PAY NOW",
+    onSuccess: () => alert("You have successfully paid your dues!!"),
+    onClose: () => alert("You haven't completed your payment!!"),
+  };
+
+  return (
+    <CheckoutComponentContainer>
+      <Heading as='h4' size='md' mb={5}>Name</Heading>
+      <Input
+        mb={5}
+        size="lg"
+        variant="outline"
+        placeholder="Full Name"
+        value={name}
+        name="name"
+        onChange={handleChange}
+      />
+      <Heading as='h4' size='md' mb={5}>Email Address</Heading>
+      <Input
+        variant="outline"
+        placeholder="School Email Address"
+        size="lg"
+        mb={5}
+        id="email"
+        type="email"
+        name="email"
+        value={email}
+        onChange={handleChange}
+      />
+      <Heading as='h4' size='md' mb={5}>Amount to Pay</Heading>
+      <Input
+        size="lg"
+        mb={8}
+        type="number"
+        variant="outline"
+        placeholder="Amount in NGN"
+        name="amount"
+        value={amount}
+        onChange={handleChange}
+      />
+
+      <CheckoutButton className="paystack-button" {...componentProps} />
+    </CheckoutComponentContainer>
+  );
+};
+
+export default CheckoutComponent;

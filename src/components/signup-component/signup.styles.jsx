@@ -9,15 +9,7 @@ export const SignUpContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media only screen and (max-width: 1200px) {
-   
-  }
-
-  @media only screen and (max-width: 700px) {
-   
-  }
-
-  .signin-form {
+    .signin-form {
     @media only screen and (max-width: 1200px) {
      
     }

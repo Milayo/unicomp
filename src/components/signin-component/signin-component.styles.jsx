@@ -16,7 +16,7 @@ export const SignInContainer = styled.div`
   }
 
   @media only screen and (max-width: 700px) {
-    height: 100vh;
+    width: 90vw;
     background: none;
   }
 

@@ -86,7 +86,7 @@ const SigninComponent = ({display}) => {
             <br />
             <Button
               type="submit"
-              fontSize={isLessThan400 ? "1x1" : "3xl"}
+              fontSize={isLessThan400 ? "1x1" : "2xl"}
               colorScheme="teal"
               p={7}
               mt={10}

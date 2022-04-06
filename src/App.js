@@ -14,6 +14,7 @@ import DashboardPage from "./pages/dashboard-page/dashboardpage";
 import AcademicsPage from "./pages/academics-page/academics-page";
 import CourseRegPage from "./pages/coursereg/coursereg-page";
 import PaymentPage from "./pages/payment-page/payment-page";
+import CheckoutPage from "./pages/checkout-page/checkout-page";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="academics" element={<AcademicsPage />} />
           <Route path="registration" element={<CourseRegPage />} />
           <Route path="payment" element={<PaymentPage />} />
+          <Route path="payment/checkout" element={<CheckoutPage />} />
         </Routes>
       </div>
     </ThemeProvider>
