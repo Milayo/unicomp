@@ -21,7 +21,11 @@ export const CheckoutComponentContainer = styled.div`
     justify-content: space-between;
 
     @media only screen and (max-width: 400px) {
-     flex-direction: column;
+      flex-direction: column;
+    }
+
+    a:hover {
+      text-decoration: none;
     }
   }
 `;

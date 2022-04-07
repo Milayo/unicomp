@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ChakraProvider } from "@chakra-ui/react";
+import { MoralisProvider } from "react-moralis";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -9,9 +10,14 @@ import { BrowserRouter } from 'react-router-dom';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ChakraProvider>
-        <App />
-      </ChakraProvider>
+      <MoralisProvider
+        appId="6AEShcqwl1bR7ZNyhGaajXYq1YJmAeISTiCsjDzk"
+        serverUrl="https://hchsjcjoctvo.usemoralis.com:2053/server"
+      >
+        <ChakraProvider>
+          <App />
+        </ChakraProvider>
+      </MoralisProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
