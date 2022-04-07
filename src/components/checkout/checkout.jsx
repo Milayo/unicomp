@@ -38,7 +38,7 @@ const CheckoutComponent = () => {
 
   return (
     <CheckoutComponentContainer>
-      <Heading as='h4' size='md' mb={5}>Name</Heading>
+      <Heading size='md' mb={5}>Name</Heading>
       <Input
         mb={5}
         size="lg"
@@ -48,7 +48,7 @@ const CheckoutComponent = () => {
         name="name"
         onChange={handleChange}
       />
-      <Heading as='h4' size='md' mb={5}>Email Address</Heading>
+      <Heading size='md' mb={5}>Email Address</Heading>
       <Input
         variant="outline"
         placeholder="School Email Address"
@@ -60,7 +60,7 @@ const CheckoutComponent = () => {
         value={email}
         onChange={handleChange}
       />
-      <Heading as='h4' size='md' mb={5}>Amount to Pay</Heading>
+      <Heading size='md' mb={5}>Amount to Pay</Heading>
       <Input
         size="lg"
         mb={8}

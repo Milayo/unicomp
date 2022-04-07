@@ -14,18 +14,20 @@ export const CheckoutComponentContainer = styled.div`
   @media only screen and (max-width: 800px) {
       width: 90vw;
   }
-  
+
 `;
 
 export const CheckoutButton = styled(PaystackButton)`
   color: white;
   background-color: teal;
-  padding: 0.5rem 1rem;
-  width: 8vw;
+  padding: 0.5rem 2rem;
+  width: 10vw;
+  justify-content: center;
   display: flex;
 
   @media only screen and (max-width: 800px) {
     width: 13vw;
+    padding: 1rem;
   }
   @media only screen and (max-width: 400px) {
     width: 20vw;

@@ -8,6 +8,10 @@ export const PaymentContainer = styled.div`
   color: teal;
   padding: 10rem;
 
+  a:hover {
+    text-decoration: none;
+  }
+
   .payment-row {
     display: flex;
     justify-content: space-between;
