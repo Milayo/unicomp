@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
-import { Input, Heading } from "@chakra-ui/react";
+import { Input, Heading, Button } from "@chakra-ui/react";
 
 import {
   CheckoutComponentContainer,
   CheckoutButton,
+  CryptoButton,
 } from "./checkout.styles.jsx";
 
 const CheckoutComponent = () => {
@@ -31,14 +32,16 @@ const CheckoutComponent = () => {
       name,
     },
     publicKey,
-    text: "PAY NOW",
+    text: "PAY WITH CARD",
     onSuccess: () => alert("You have successfully paid your dues!!"),
     onClose: () => alert("You haven't completed your payment!!"),
   };
 
   return (
     <CheckoutComponentContainer>
-      <Heading size='md' mb={5}>Name</Heading>
+      <Heading size="md" mb={5}>
+        Name
+      </Heading>
       <Input
         mb={5}
         size="lg"
@@ -48,7 +51,9 @@ const CheckoutComponent = () => {
         name="name"
         onChange={handleChange}
       />
-      <Heading size='md' mb={5}>Email Address</Heading>
+      <Heading size="md" mb={5}>
+        Email Address
+      </Heading>
       <Input
         variant="outline"
         placeholder="School Email Address"
@@ -60,19 +65,23 @@ const CheckoutComponent = () => {
         value={email}
         onChange={handleChange}
       />
-      <Heading size='md' mb={5}>Amount to Pay</Heading>
+      <Heading size="md" mb={5}>
+        Amount to Pay
+      </Heading>
       <Input
         size="lg"
         mb={8}
         type="number"
         variant="outline"
-        placeholder="Amount in NGN"
+        placeholder="Amount in NGN (Kobo)"
         name="amount"
         value={amount}
         onChange={handleChange}
       />
-
-      <CheckoutButton className="paystack-button" {...componentProps} />
+      <div className="payment-buttons">
+        <CheckoutButton className="paystack-button" {...componentProps} />
+        <CryptoButton>PAY WITH CRYPTO</CryptoButton>
+      </div>
     </CheckoutComponentContainer>
   );
 };
