@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-import { Input, Heading, useToast } from "@chakra-ui/react";
-import { useMoralis } from "react-moralis";
-import { useNavigate } from "react-router-dom";
+import { Input, Heading, Link } from "@chakra-ui/react";
+
 
 import {
   CheckoutComponentContainer,
@@ -16,21 +15,6 @@ const CheckoutComponent = () => {
     name: "",
     amount: "",
   });
-
-  const navigate = useNavigate();
-  const toast = useToast();
-   const { authenticate, login, isAuthenticated } = useMoralis();
-
-  const MetaMaskLogin = () => {
-    toast({
-      title: "Metamask Plugin/App Required.",
-      description: "Please ensure you have Metamask on your device",
-      status: "success",
-      duration: 1500,
-      isClosable: true,
-    });
-    authenticate();
-  };
 
 
 
@@ -56,9 +40,6 @@ const CheckoutComponent = () => {
     onClose: () => alert("You haven't completed your payment!!"),
   };
 
-    useEffect(() => {
-      if (isAuthenticated) navigate("/cryptopayment");
-    }, [isAuthenticated, navigate]);
 
   return (
     <CheckoutComponentContainer>
@@ -103,7 +84,9 @@ const CheckoutComponent = () => {
       />
       <div className="payment-buttons">
         <CheckoutButton className="paystack-button" {...componentProps} />
-          <CryptoButton onClick={MetaMaskLogin}>PAY WITH CRYPTO</CryptoButton>
+        <Link href="/cryptopayment">
+          <CryptoButton>PAY WITH CRYPTO</CryptoButton>
+        </Link>
       </div>
     </CheckoutComponentContainer>
   );
