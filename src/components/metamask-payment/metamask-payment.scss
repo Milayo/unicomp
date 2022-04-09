@@ -1,6 +1,6 @@
 .metamaskpayment {
   &-header {
-   background-color: teal;
+    background-color: teal;
     display: flex;
     padding: 1.5rem 3.5rem;
     margin: 0.5rem 0.5rem;
@@ -62,9 +62,10 @@
 }
 
 .metamaskpayment-content2 {
+  font-size: 1.3rem;
   width: 40vw;
   padding: 5rem;
-  height: 60vh;
+  height: 55vh;
   background-color: #fff;
   margin: 3rem auto;
   @media only screen and (max-width: 1000px) {

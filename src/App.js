@@ -19,7 +19,7 @@ import CheckoutPage from "./pages/checkout-page/checkout-page";
 import MetamaskPayment from "./components/metamask-payment/metamaskpayment";
 
 const App = () => {
-  const { isAuthenticated, user, logout } = useMoralis();
+  const { isAuthenticated, user } = useMoralis();
   return (
     <ThemeProvider theme={theme}>
       <div className="App">

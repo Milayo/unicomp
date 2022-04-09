@@ -20,7 +20,7 @@ import Moralis from "moralis";
 
 import { useWeb3Transfer } from "react-moralis";
 
-const MetamaskPayment = ({ logout, user }) => {
+const MetamaskPayment = ({ user }) => {
   const [amount, setAmount] = useState(0);
   const [receiver, setReceiver] = useState(
     "0x53c7d1EaF3d298759F5C7A3d15421B2565e34f3F"
@@ -28,7 +28,7 @@ const MetamaskPayment = ({ logout, user }) => {
 
   const toast = useToast();
 
-  const { authenticate, isAuthenticated } = useMoralis();
+  const { authenticate, isAuthenticated, logout } = useMoralis();
 
   const handleChange = (value) => {
     setAmount(value);
@@ -99,28 +99,31 @@ const MetamaskPayment = ({ logout, user }) => {
                 });
               }}
             >
-              <FormControl mt="4">
-                <FormLabel htmlFor="amount">Amount of ETH</FormLabel>
-                <NumberInput step={0.1} onChange={handleChange}>
+              <FormControl mt="3">
+                <FormLabel htmlFor="amount" fontSize="1.3rem">
+                  Amount of ETH
+                </FormLabel>
+                <NumberInput step={0.1} onChange={handleChange} size="lg">
                   <NumberInputField id="amount" value={amount} />
                   <NumberInputStepper>
                     <NumberIncrementStepper />
                     <NumberDecrementStepper />
                   </NumberInputStepper>
                 </NumberInput>
-                <Balance user={user} />
-                <FormLabel mt="4" htmlFor="receiver">
+                <Balance user={user} isAuthenticated={isAuthenticated}/>
+                <FormLabel mt="4" htmlFor="receiver" fontSize="1.3rem">
                   Send to
                 </FormLabel>
                 <Input
                   id="receiver"
                   type="text"
+                  defaultValue={receiver}
                   placeholder="Receiver's Address"
-                  value={receiver}
+                  size="lg"
                 />
                 <Text mt={5}>
                   NB: Ensure to include the correct ETH equivalent of your fees.
-                  Call the calldesk for help.
+                  Call the calldesk for help if necessary.
                 </Text>
               </FormControl>
               <Button
