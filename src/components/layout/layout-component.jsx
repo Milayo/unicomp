@@ -2,10 +2,11 @@ import React from 'react';
 import Header from '../header/header';
 import SidebarComponent from '../sidebar/sidebar';
 
-const Layout = (props) => {
+const Layout = (props, { currentUser }) => {
+  console.log(currentUser);
   return (
     <div>
-      <Header />
+      <Header currentUser={currentUser}/>
       <div style={{display: "flex"}}>
         {" "}
         <SidebarComponent />

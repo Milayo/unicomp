@@ -77,7 +77,7 @@ const CheckoutComponent = () => {
         mb={8}
         type="number"
         variant="outline"
-        placeholder="Amount in NGN (Kobo)"
+        placeholder="Amount in NGN (KOBO)"
         name="amount"
         value={amount}
         onChange={handleChange}

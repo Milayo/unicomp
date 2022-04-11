@@ -2,8 +2,10 @@ import React from "react";
 import { Avatar, Button, useMediaQuery } from "@chakra-ui/react";
 import { ProfileContainer, ProfileContent, ProfileSection } from "./profile-component.styles";
 
-const ProfileComponent = () => {
-   const [isLessThan800] = useMediaQuery("(max-width: 800px)");
+const ProfileComponent = ({currentUser}) => {
+  const [isLessThan800] = useMediaQuery("(max-width: 800px)");
+  console.log(currentUser)
+  const { email, name, matricno } = currentUser;
   return (
     <ProfileContainer>
       <Button colorScheme="teal" className="edit-btn">
@@ -12,10 +14,10 @@ const ProfileComponent = () => {
       <ProfileSection>
         <div className="profile-header">
           <Avatar
-            name="Badejo Tioluwani"
+            name={name}
             size={isLessThan800 ? "lg" : "2xl"}
           />
-          <h3>Badejo Tioluwani Adejare</h3>
+          <h3>{name}</h3>
         </div>
 
         <ProfileContent>
@@ -28,11 +30,11 @@ const ProfileComponent = () => {
             <li className="title">Phone</li>
           </ul>
           <ul>
-            <li className="value">CLI/2017/066</li>
+            <li className="value">{matricno}</li>
             <li className="value">300 Level</li>
             <li className="value">Computer Sciences</li>
             <li className="value">Sciences</li>
-            <li className="value">emmmmmmmm@gmail.com</li>
+            <li className="value">{email}</li>
             <li className="value">123 123 122 1233</li>
           </ul>
         </ProfileContent>

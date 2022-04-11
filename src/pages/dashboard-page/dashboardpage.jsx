@@ -4,15 +4,15 @@ import Layout from '../../components/layout/layout-component';
 import ProfileComponent from '../../components/profile/profile-component';
 import { DashboardContainer } from './dashboardpage.styles';
 
-const DashboardPage = () => {
+const DashboardPage = ({currentUser}) => {
   return (
-      <Layout>
+    <Layout currentUser={currentUser}>
       <DashboardContainer>
-        <ProfileComponent />
-        <CourseList/>
+        <ProfileComponent currentUser={currentUser} />
+        <CourseList />
       </DashboardContainer>
     </Layout>
-  )
+  );
 }
 
 export default DashboardPage;

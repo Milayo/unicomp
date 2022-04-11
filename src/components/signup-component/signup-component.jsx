@@ -10,25 +10,26 @@ import {
   InputRightElement,
   Button,
 } from "@chakra-ui/react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, createUserProfileDocument } from "../firebase/firebase.utils";
+import { Formik, ErrorMessage } from "formik";
 import { SignUpContainer } from "./signup.styles";
 
-const SignupComponent = ({ display }) => {
+const SignupComponent = ({}) => {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
   const [isLessThan400] = useMediaQuery("(max-width: 400px)");
+
   return (
     <SignUpContainer>
       <Formik
         initialValues={{ email: "", password: "", name: "", matricno: "" }}
         validate={(values) => {
           const errors = {};
-          if (!values.firstName) {
-            errors.firstName = "Username is Required";
-          } else if (!values.lastName) {
-            errors.lastName = "Required";
+          if (!values.name) {
+            errors.name = "Name is Required";
           } else if (!values.email) {
-            errors.email = "Required";
+            errors.email = "Email is Required";
           } else if (
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
           ) {
@@ -41,19 +42,38 @@ const SignupComponent = ({ display }) => {
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+          console.log(values);
+          setTimeout(async () => {
+            const { email, password, name, matricno } = values;
+            try {
+              const { user } = await createUserWithEmailAndPassword(
+                auth,
+                email,
+                password
+              );
+              await createUserProfileDocument(user, matricno, name );
+              
+              console.log(user);
+            } catch (error) {
+              console.log(error.message);
+              alert(error.message);
+            }
+             values.email = "";
+               values.password = "";
+               values.name = "";
+               values.matricno = "";
             setSubmitting(false);
           }, 400);
         }}
       >
-        {({ values, handleChange, isSubmitting }) => (
-          <Form
+        {({ values, handleChange, handleSubmit, isSubmitting }) => (
+          <form
             style={{
               backgroundColor: "#fff",
               padding: "5rem",
               borderRadius: "2rem",
             }}
+            onSubmit={handleSubmit}
             className="signup-form"
           >
             <FormControl isRequired>
@@ -62,6 +82,7 @@ const SignupComponent = ({ display }) => {
               </FormLabel>
               <Input
                 id="email"
+                name="email"
                 type="email"
                 size="lg"
                 fontSize="2xl"
@@ -76,6 +97,7 @@ const SignupComponent = ({ display }) => {
               </FormLabel>
               <Input
                 id="matricno"
+                name="matricno"
                 type="alphanumeric"
                 size="lg"
                 fontSize="2xl"
@@ -90,6 +112,7 @@ const SignupComponent = ({ display }) => {
               </FormLabel>
               <Input
                 id="name"
+                name="name"
                 type="text"
                 htmlSize={50}
                 width="auto"
@@ -104,15 +127,16 @@ const SignupComponent = ({ display }) => {
                 htmlFor="password"
                 size="lg"
                 fontSize={isLessThan400 ? "2x1" : "3xl"}
-                value={values.password}
               >
                 Password
               </FormLabel>
               <InputGroup size="md">
                 <Input
+                  id="password"
                   pr="13rem"
                   type={show ? "text" : "password"}
                   size="lg"
+                  value={values.password}
                   onChange={handleChange}
                 />
                 <InputRightElement width="4.5rem" mt={1}>
@@ -142,7 +166,7 @@ const SignupComponent = ({ display }) => {
                 SIGN IN
               </Link>
             </Text>
-          </Form>
+          </form>
         )}
       </Formik>
     </SignUpContainer>

@@ -1,23 +1,25 @@
-import React from 'react';
+import React from "react";
 import {
   FormControl,
   FormLabel,
   Link,
   Text,
-useMediaQuery,
+  useMediaQuery,
   InputGroup,
   Input,
   InputRightElement,
-  Button
+  Button,
 } from "@chakra-ui/react";
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { SignInContainer } from './signin-component.styles.jsx';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase/firebase.utils.js";
+import { Formik, Form, ErrorMessage } from "formik";
+import { SignInContainer } from "./signin-component.styles.jsx";
 
-const SigninComponent = ({display}) => {
-   const [show, setShow] = React.useState(false);
+const SigninComponent = ({ display }) => {
+  const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
   const [isLessThan400] = useMediaQuery("(max-width: 400px)");
-  
+
   return (
     <SignInContainer display={display}>
       <Formik
@@ -30,18 +32,31 @@ const SigninComponent = ({display}) => {
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
           ) {
             errors.email = "Invalid email address";
+          } else if (!values.password) {
+            errors.password = "Password is required";
           }
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+          setTimeout(async () => {
+            const { email, password } = values;
+
+            try {
+              await signInWithEmailAndPassword(auth, email, password);
+              values.email = "";
+              values.password = "";
+            } catch (error) {
+              console.log(error);
+              alert(error);
+            }
+
             setSubmitting(false);
           }, 400);
         }}
       >
-        {({ isSubmitting }) => (
-          <Form
+        {({ values, handleSubmit, handleChange, isSubmitting }) => (
+          <form
+            onSubmit={handleSubmit}
             style={{
               backgroundColor: "#fff",
               padding: "5rem",
@@ -56,6 +71,9 @@ const SigninComponent = ({display}) => {
               <Input
                 id="email"
                 type="email"
+                name="email"
+                onChange={handleChange}
+                value={values.email}
                 htmlSize="50"
                 width="auto"
                 fontSize={isLessThan400 ? "1x1" : "2xl"}
@@ -63,14 +81,16 @@ const SigninComponent = ({display}) => {
             </FormControl>
             <ErrorMessage name="email" component="div" />
             <FormControl mt={5} mb={5} isRequired>
-              <FormLabel htmlFor="password" fontSize="2xl">
+              <FormLabel htmlFor="password" fontSize="2xl" v>
                 Password
               </FormLabel>
               <InputGroup size="md">
                 <Input
                   pr="13rem"
+                  alue={values.password}
                   type={show ? "text" : "password"}
-              
+                  id="password"
+                  onChange={handleChange}
                 />
                 <InputRightElement width="5rem">
                   <Button h="2.2rem" size="lg" onClick={handleClick}>
@@ -102,12 +122,11 @@ const SigninComponent = ({display}) => {
                 REGISTER HERE
               </Link>
             </Text>
-          </Form>
+          </form>
         )}
       </Formik>
     </SignInContainer>
   );
-}
+};
 
 export default SigninComponent;
-
