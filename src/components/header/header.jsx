@@ -1,6 +1,20 @@
 import React, { useState } from "react";
-import { Avatar, AvatarBadge } from "@chakra-ui/react";
+import { useNavigate } from "react-router";
+
 import { HamburgerIcon } from "@chakra-ui/icons";
+import {
+  Modal,
+  Avatar,
+  AvatarBadge,
+  useDisclosure,
+  ModalOverlay,
+  Button,
+  ModalContent,
+  Text,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
 import { getAuth, signOut } from "firebase/auth";
 
 import { ReactComponent as Logo } from "../../assets/images/logo_school.svg";
@@ -18,11 +32,14 @@ import {
   HeaderRow,
   ColoredSection,
 } from "./header.styles";
+
 import ToggleSidebar from "../togglesidebar/togglesidebar";
-import { useNavigate } from "react-router";
+
 
 const Header = ({ currentUser, setCurrentUser }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isIconOpen, setIconOpen] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  
   console.log(currentUser);
   const auth = getAuth();
   let navigate = useNavigate();
@@ -51,9 +68,26 @@ const Header = ({ currentUser, setCurrentUser }) => {
         </LogoContainer>
         <ColoredSection></ColoredSection>
         <HeaderTitle>Dashboard</HeaderTitle>
-        <NotificationContainer>
-          <NotificationBell className="bell-icon" />
+        <NotificationContainer onClick={onOpen}>
+          <NotificationBell className="bell-icon" onClick={onOpen} />
         </NotificationContainer>
+
+        <Modal onClose={onClose} isOpen={isOpen} isCentered>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalCloseButton />
+            <ModalBody fontSize="2x1" pt="8rem" pb="8rem" pr="4rem" pl="4rem">
+              <span style={{ fontSize: "1.5rem" }}>
+                {" "}
+                No Notifications Available{" "}
+              </span>
+            </ModalBody>
+            <ModalFooter>
+              <Button onClick={onClose}>Close</Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+
         <WelcomeContainer>
           <Avatar name={currentUser.name}>
             <AvatarBadge boxSize="1.25em" bg="green.500" />
@@ -64,12 +98,12 @@ const Header = ({ currentUser, setCurrentUser }) => {
         <SidebarIcon>
           <HamburgerIcon
             onClick={() => {
-              isOpen ? setIsOpen(false) : setIsOpen(true);
+              isIconOpen ? setIconOpen(false) : setIconOpen(true);
             }}
           />
         </SidebarIcon>
       </HeaderRow>
-      {isOpen ? <ToggleSidebar setIsOpen={setIsOpen} /> : null}
+      {isIconOpen ? <ToggleSidebar setIconOpen={setIconOpen} /> : null}
     </div>
   );
 };

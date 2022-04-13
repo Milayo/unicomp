@@ -64,6 +64,7 @@ const ProfileComponent = ({ currentUser }) => {
         isOpen={isOpen}
         onClose={onClose}
         motionPreset="scale"
+        isCentered
       >
         <ModalOverlay />
         <ModalContent p="2rem">
