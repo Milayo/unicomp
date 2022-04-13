@@ -6,7 +6,6 @@ import { GlobalStyles } from "./Globalstyles";
 
 import "./App.css";
 import theme from "./theme";
-import { onAuthStateChanged } from "firebase/auth";
 import {
   auth,
   createUserProfileDocument,
@@ -25,12 +24,9 @@ const App = () => {
   const { isAuthenticated, user } = useMoralis();
 
   useEffect(() => {
-    let unsubscribeFromAuth = null;
-
-    unsubscribeFromAuth = onAuthStateChanged(auth, async (userAuth) => {
+    const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
-
         userRef.onSnapshot((snapShot) => {
           setCurrentUser({
             id: snapShot.id,
@@ -38,18 +34,18 @@ const App = () => {
           });
         });
       }
-
-      setCurrentUser(userAuth);
-      console.log(currentUser);
     });
+
     return () => {
       unsubscribeFromAuth();
     };
   }, []);
+  console.log(currentUser);
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
         <GlobalStyles />
+
         <Routes>
           <Route
             path="/"
@@ -65,17 +61,45 @@ const App = () => {
           <Route
             path="register"
             element={
-              currentUser ? (
-                <Navigate replace to="/dashboard" />
-              ) : (
-                <SignupPage />
-              )
+              currentUser ? <Navigate to="/dashboard" /> : <SignupPage />
             }
           />
-          <Route path="dashboard" element={<DashboardPage currentUser={currentUser}/>} />
-          <Route path="academics" element={<AcademicsPage />} />
-          <Route path="registration" element={<CourseRegPage />} />
-          <Route path="payment" element={<PaymentPage />} />
+          <Route
+            path="dashboard"
+            element={
+              <DashboardPage
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
+            }
+          />
+          <Route
+            path="academics"
+            element={
+              <AcademicsPage
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
+            }
+          />
+          <Route
+            path="registration"
+            element={
+              <CourseRegPage
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
+            }
+          />
+          <Route
+            path="payment"
+            element={
+              <PaymentPage
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
+            }
+          />
           <Route path="payment/checkout" element={<CheckoutPage />} />
           <Route
             path="/cryptopayment"

@@ -17,6 +17,7 @@ const CourseList = () => {
     setRegCourses(newRegCourses)
     localStorage.setItem("Course Lists", JSON.stringify(newRegCourses))
   }
+  
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("Course Lists"));
     if (items) {

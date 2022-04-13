@@ -7,6 +7,7 @@ import {
   useMediaQuery,
   InputGroup,
   Input,
+  Select,
   InputRightElement,
   Button,
 } from "@chakra-ui/react";
@@ -23,7 +24,14 @@ const SignupComponent = ({}) => {
   return (
     <SignUpContainer>
       <Formik
-        initialValues={{ email: "", password: "", name: "", matricno: "" }}
+        initialValues={{
+          email: "",
+          password: "",
+          name: "",
+          matricno: "",
+          dept: "",
+          level: "",
+        }}
         validate={(values) => {
           const errors = {};
           if (!values.name) {
@@ -38,30 +46,42 @@ const SignupComponent = ({}) => {
             errors.password = "Password is required";
           } else if (values.password.length < 6) {
             errors.password = "Password should exceed 6 characters";
+          } else if (!values.dept) {
+            errors.dept = "Department is Required";
+          } else if (!values.level) {
+            errors.level = "Level is Required";
           }
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
           console.log(values);
           setTimeout(async () => {
-            const { email, password, name, matricno } = values;
+            const { email, password, name, matricno, dept, level } = values;
             try {
               const { user } = await createUserWithEmailAndPassword(
                 auth,
                 email,
                 password
               );
-              await createUserProfileDocument(user, matricno, name );
-              
+              await createUserProfileDocument(
+                user,
+                matricno,
+                name,
+                dept,
+                level
+              );
+
               console.log(user);
             } catch (error) {
               console.log(error.message);
               alert(error.message);
             }
-             values.email = "";
-               values.password = "";
-               values.name = "";
-               values.matricno = "";
+            values.email = "";
+            values.password = "";
+            values.name = "";
+            values.matricno = "";
+            values.dept = "";
+            values.level = "";
             setSubmitting(false);
           }, 400);
         }}
@@ -70,7 +90,7 @@ const SignupComponent = ({}) => {
           <form
             style={{
               backgroundColor: "#fff",
-              padding: "5rem",
+              padding: "3rem",
               borderRadius: "2rem",
             }}
             onSubmit={handleSubmit}
@@ -91,7 +111,7 @@ const SignupComponent = ({}) => {
               />
             </FormControl>
             <ErrorMessage name="email" component="div" />
-            <FormControl mt={5} mb={5} isRequired>
+            <FormControl mt={3} mb={3} isRequired>
               <FormLabel htmlFor="matricno" fontSize="3xl">
                 Matric Number
               </FormLabel>
@@ -106,7 +126,7 @@ const SignupComponent = ({}) => {
               />
             </FormControl>
             <ErrorMessage name="matricno" component="div" />
-            <FormControl mt={5} mb={5} isRequired>
+            <FormControl mt={3} mb={3} isRequired>
               <FormLabel htmlFor="name" fontSize="3xl">
                 Name
               </FormLabel>
@@ -122,7 +142,62 @@ const SignupComponent = ({}) => {
               />
             </FormControl>
             <ErrorMessage name="name" component="div" />
-            <FormControl mt={5} mb={5} isRequired>
+            <FormControl mt={3} mb={3} isRequired>
+              <FormLabel htmlFor="dept" fontSize="3xl">
+                Department
+              </FormLabel>
+              <Select
+                placeholder="Select Department"
+                size="lg"
+                fontSize="2xl"
+                id="dept"
+                name="dept"
+                value={values.dept}
+                onChange={handleChange}
+              >
+                <option value="Comp Science and Engr">
+                  Comp Science and Engr
+                </option>
+                <option value="Comp Science and Econs">
+                  Comp Science and Econs
+                </option>
+                <option value="Comp Science and Web Dev">
+                  Comp Science and Web Dev
+                </option>
+                <option value="Comp Science and Data">
+                  Comp Science and Data
+                </option>
+                <option value="Comp Science and Physics">
+                  Comp Science and Physics
+                </option>
+                <option value="Comp Science and Maths">
+                  Comp Science and Maths
+                </option>
+              </Select>
+            </FormControl>
+            <ErrorMessage name="dept" component="div" />
+            <FormControl mt={3} mb={3} isRequired>
+              <FormLabel htmlFor="level" fontSize="3xl">
+                Level
+              </FormLabel>
+              <Select
+                placeholder="Select Level"
+                size="lg"
+                fontSize="2xl"
+                id="level"
+                name="level"
+                value={values.level}
+                onChange={handleChange}
+              >
+                <option value="100 Level">100 Level</option>
+                <option value="200 Level">200 Level</option>
+                <option value="300 Level">300 Level</option>
+                <option value="400 Level">400 Level</option>
+                <option value="500 Level">500 Level</option>
+              </Select>
+            </FormControl>
+            <ErrorMessage name="level" component="div" />
+            <FormControl mt={3} mb={3} isRequired>
               <FormLabel
                 htmlFor="password"
                 size="lg"
@@ -150,16 +225,16 @@ const SignupComponent = ({}) => {
             <br />
             <Button
               type="submit"
-              fontSize={isLessThan400 ? "1x1" : "3xl"}
+              fontSize={isLessThan400 ? "1x1" : "2xl"}
               colorScheme="teal"
-              p={10}
-              mt={5}
+              p={7}
+              mt={4}
               size="lg"
               disabled={isSubmitting}
             >
               SIGN UP
             </Button>
-            <Text fontSize="2xl" mt={9} align="center">
+            <Text fontSize="2xl" mt={5} align="center">
               Already have an account?
               <Link color="teal.500" href="/">
                 {" "}

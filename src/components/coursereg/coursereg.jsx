@@ -106,7 +106,7 @@ const CourseRegSection = () => {
   );
 
   const [isLessThan800] = useMediaQuery("(max-width: 800px)");
-
+  
   const toast = useToast();
 
   const handleClick = (position) => {

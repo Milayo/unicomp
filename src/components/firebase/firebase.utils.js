@@ -14,7 +14,7 @@ const config = {
   measurementId: "G-9KBC23FKDP",
 };
 
-export const createUserProfileDocument = async (user, matricno, name) => {
+export const createUserProfileDocument = async (user, matricno, name, dept, level) => {
   if (!user) return;
 
   const userRef = firebase.firestore().doc(`users/${user.uid}`);
@@ -30,7 +30,9 @@ export const createUserProfileDocument = async (user, matricno, name) => {
         email,
         createdAt,
         name: name,
-        matricno: matricno
+        matricno: matricno,
+        dept: dept,
+        level: level
       });
     } catch (error) {
       console.log("error creating a new user", error.message);
@@ -39,7 +41,9 @@ export const createUserProfileDocument = async (user, matricno, name) => {
   return userRef;
 };
 
-firebase.initializeApp(config);
+const firebaseApp = firebase.initializeApp(config);
+
+export const Database = firebaseApp.firestore();
 
 export const auth = getAuth();
 export const firestore = firebase.firestore();

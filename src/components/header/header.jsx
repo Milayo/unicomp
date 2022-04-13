@@ -21,22 +21,25 @@ import {
 import ToggleSidebar from "../togglesidebar/togglesidebar";
 import { useNavigate } from "react-router";
 
-const Header = ({currentUser}) => {
+const Header = ({ currentUser, setCurrentUser }) => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(currentUser)
+  console.log(currentUser);
   const auth = getAuth();
-   let navigate = useNavigate();
+  let navigate = useNavigate();
+
+  const fullName = currentUser.name.split(" ");
 
   const logout = () => {
     signOut(auth)
       .then(() => {
+        setCurrentUser(null);
+        navigate("/");
         alert("SignOut successful");
-        navigate("/")
       })
       .catch((error) => {
         // An error happened.
       });
-  }
+  };
   return (
     <div>
       <HeaderRow>
@@ -52,11 +55,11 @@ const Header = ({currentUser}) => {
           <NotificationBell className="bell-icon" />
         </NotificationContainer>
         <WelcomeContainer>
-          <Avatar name="bnnm mm">
+          <Avatar name={currentUser.name}>
             <AvatarBadge boxSize="1.25em" bg="green.500" />
           </Avatar>
-          <h3>Welcome, Badejo</h3>
-          <LogOut className="logout-icon" onClick={logout}/>
+          <h3>Welcome, {fullName[0]} </h3>
+          <LogOut className="logout-icon" onClick={logout} />
         </WelcomeContainer>
         <SidebarIcon>
           <HamburgerIcon
