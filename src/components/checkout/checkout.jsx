@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { Input, Heading, Link } from "@chakra-ui/react";
 
-
 import {
   CheckoutComponentContainer,
   CheckoutButton,
@@ -15,8 +14,6 @@ const CheckoutComponent = () => {
     name: "",
     amount: "",
   });
-
-
 
   const handleChange = (event) => {
     const { value, name } = event.target;
@@ -40,9 +37,9 @@ const CheckoutComponent = () => {
     onClose: () => alert("You haven't completed your payment!!"),
   };
 
-
   return (
     <CheckoutComponentContainer>
+      <Heading mb={5} textAlign="center">PAYMENT PAGE</Heading>
       <Heading size="md" mb={5}>
         Name
       </Heading>

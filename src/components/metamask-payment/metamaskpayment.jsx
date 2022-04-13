@@ -71,6 +71,7 @@ const MetamaskPayment = ({ user }) => {
             <Text fontSize="2xl" fontWeight="bold">
               Send ETH
             </Text>
+            
             <form
               onSubmit={async (e) => {
                 e.preventDefault();

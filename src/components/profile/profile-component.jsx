@@ -46,9 +46,11 @@ const ProfileComponent = ({ currentUser }) => {
     try {
       await Database.collection('users').doc(id).update({
        ...input
-     })
+      })
+      onClose()
     } catch (error) {
       console.log(error)
+      onClose();
    }
     
    
