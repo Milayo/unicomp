@@ -1,5 +1,5 @@
 import React from "react";
-import { Spinner } from "@chakra-ui/react";
+import { Center, flexbox, Spinner } from "@chakra-ui/react";
 import { Text, Button,  Link } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
@@ -58,13 +58,21 @@ const PaymentPage = ({ currentUser, setCurrentUser}) => {
           </PaymentContainer>
         </Layout>
       ) : (
-        <Spinner
-          thickness="4px"
-          speed="0.65s"
-          emptyColor="gray.200"
-          color="blue.500"
-          size="xl"
-        />
+          <div style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh"
+        }}>
+          <Spinner
+            thickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color="blue.500"
+              size="xl"
+              p="2rem"
+          />
+        </div>
       )}
     </>
   );

@@ -10,7 +10,6 @@ import {
   NumberInput,
   NumberInputField,
   NumberInputStepper,
-  Spinner,
   useToast,
 } from "@chakra-ui/react";
 import "./metamask-payment.scss";

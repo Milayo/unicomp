@@ -19,6 +19,7 @@ const SigninComponent = ({ display }) => {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
   const [isLessThan400] = useMediaQuery("(max-width: 400px)");
+    const [isLessThan800] = useMediaQuery("(max-width: 800px)");
 
   return (
     <SignInContainer display={display}>
@@ -57,11 +58,7 @@ const SigninComponent = ({ display }) => {
         {({ values, handleSubmit, handleChange, isSubmitting }) => (
           <form
             onSubmit={handleSubmit}
-            style={{
-              backgroundColor: "#fff",
-              padding: "5rem",
-              borderRadius: "2rem",
-            }}
+           
             className="signin-form"
           >
             <FormControl isRequired>
@@ -74,14 +71,14 @@ const SigninComponent = ({ display }) => {
                 name="email"
                 onChange={handleChange}
                 value={values.email}
-                htmlSize="50"
-                width="auto"
+                htmlSize={1}
+                
                 fontSize={isLessThan400 ? "1x1" : "2xl"}
               />
             </FormControl>
             <ErrorMessage name="email" component="div" />
             <FormControl mt={5} mb={5} isRequired>
-              <FormLabel htmlFor="password" fontSize="2xl" v>
+              <FormLabel htmlFor="password" fontSize="2xl">
                 Password
               </FormLabel>
               <InputGroup size="md">
@@ -100,16 +97,14 @@ const SigninComponent = ({ display }) => {
               </InputGroup>
             </FormControl>
             <ErrorMessage name="password" component="div" />
-            <Link color="teal.500" href="#" fontSize="2xl">
-              Forgot password?
-            </Link>
+            
             <br />
             <Button
               type="submit"
               fontSize={isLessThan400 ? "1x1" : "2xl"}
               colorScheme="teal"
               p={7}
-              mt={10}
+              mt={3}
               size="lg"
               disabled={isSubmitting}
             >

@@ -20,7 +20,9 @@ export const SignInSection = styled.div`
     align-items: center;
   }
 
- 
+  @media only screen and (max-width: 700px) {
+    height: 100vh;
+  }
 
   .signin-btn {
     visibility: hidden;
@@ -35,10 +37,9 @@ export const SignInSection = styled.div`
 export const SigninPageContainer = styled.div`
   margin: 3rem 5rem 3rem 5rem;
   display: flex;
-@media only screen and (max-width: 700px) {
-  margin: 0;
-}
-
+  @media only screen and (max-width: 700px) {
+    margin: 0;
+  }
 `;
 
 export const SigninPageText = styled.h4`
@@ -49,10 +50,10 @@ export const SigninPageText = styled.h4`
   font-family: ${(props) => props.theme.font.fontFamily2};
 
   @media only screen and (max-width: 1200px) {
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 800px) {
     font-size: 3rem;
   }
 `;
@@ -62,7 +63,7 @@ export const ImageContainer = styled.div`
   .signin-logo {
     height: 10rem;
     fill: white;
-    
+
     @media only screen and (max-width: 500px) {
       height: 10rem;
     }

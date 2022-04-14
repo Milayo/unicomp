@@ -27,8 +27,8 @@ const SigninPage = () => {
           colorScheme="teal"
           className="signin-btn"
           onClick={() => setDisplay(true)}
-          fontSize="5xl"
-          p={12}
+          fontSize="3xl"
+          p={10}
           mt={7}
           size="lg"
         >

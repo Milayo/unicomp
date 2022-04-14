@@ -12,22 +12,28 @@ export const SignInContainer = styled.div`
     width: 100vw;
     display: ${({ display }) => (display ? "flex" : "none")};
 
-    height: 90vh;
+    height: 88vh;
   }
 
-  @media only screen and (max-width: 700px) {
-    width: 90vw;
+  @media only screen and (max-width: 800px) {
     background: none;
   }
 
   .signin-form {
+    background-color: #fff;
+    padding: 4rem;
+    width: 40vw;
+    height: 55vh;
+    border-radius: 2rem;
+
     @media only screen and (max-width: 1200px) {
-      height: 50vh;
-      line-height: 3rem;
+      height: 70vh;
+      width: 70vw;
     }
 
-    @media only screen and (max-width: 700px) {
-      padding: 0.1rem;
+    @media only screen and (max-width: 800px) {
+      width: 90vw;
+      
     }
   }
 `;

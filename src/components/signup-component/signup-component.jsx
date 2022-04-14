@@ -87,17 +87,24 @@ const SignupComponent = ({}) => {
         }}
       >
         {({ values, handleChange, handleSubmit, isSubmitting }) => (
-          <form
-            style={{
-              backgroundColor: "#fff",
-              padding: "3rem",
-              borderRadius: "2rem",
-            }}
-            onSubmit={handleSubmit}
-            className="signup-form"
-          >
+          <form onSubmit={handleSubmit} className="signup-form">
+            <FormControl mt={2} mb={2} isRequired>
+              <FormLabel htmlFor="name" fontSize="2xl">
+                Name
+              </FormLabel>
+              <Input
+                id="name"
+                name="name"
+                type="text"
+                size="lg"
+                fontSize="2xl"
+                onChange={handleChange}
+                value={values.name}
+              />
+            </FormControl>
+            <ErrorMessage name="name" component="div" />
             <FormControl isRequired>
-              <FormLabel htmlFor="email" fontSize="3xl">
+              <FormLabel htmlFor="email" fontSize="2xl">
                 Email address
               </FormLabel>
               <Input
@@ -111,8 +118,8 @@ const SignupComponent = ({}) => {
               />
             </FormControl>
             <ErrorMessage name="email" component="div" />
-            <FormControl mt={3} mb={3} isRequired>
-              <FormLabel htmlFor="matricno" fontSize="3xl">
+            <FormControl mt={2} mb={2} isRequired>
+              <FormLabel htmlFor="matricno" fontSize="2xl">
                 Matric Number
               </FormLabel>
               <Input
@@ -126,32 +133,17 @@ const SignupComponent = ({}) => {
               />
             </FormControl>
             <ErrorMessage name="matricno" component="div" />
-            <FormControl mt={3} mb={3} isRequired>
-              <FormLabel htmlFor="name" fontSize="3xl">
-                Name
-              </FormLabel>
-              <Input
-                id="name"
-                name="name"
-                type="text"
-                htmlSize={50}
-                width="auto"
-                fontSize="2xl"
-                onChange={handleChange}
-                value={values.name}
-              />
-            </FormControl>
-            <ErrorMessage name="name" component="div" />
-            <FormControl mt={3} mb={3} isRequired>
-              <FormLabel htmlFor="dept" fontSize="3xl">
+
+            <FormControl mt={2} mb={2} isRequired>
+              <FormLabel htmlFor="dept" fontSize="2xl">
                 Department
               </FormLabel>
               <Select
+                id="dept"
+                name="dept"
                 placeholder="Select Department"
                 size="lg"
                 fontSize="2xl"
-                id="dept"
-                name="dept"
                 value={values.dept}
                 onChange={handleChange}
               >
@@ -176,8 +168,8 @@ const SignupComponent = ({}) => {
               </Select>
             </FormControl>
             <ErrorMessage name="dept" component="div" />
-            <FormControl mt={3} mb={3} isRequired>
-              <FormLabel htmlFor="level" fontSize="3xl">
+            <FormControl mt={2} mb={2} isRequired>
+              <FormLabel htmlFor="level" fontSize="2xl">
                 Level
               </FormLabel>
               <Select
@@ -197,12 +189,8 @@ const SignupComponent = ({}) => {
               </Select>
             </FormControl>
             <ErrorMessage name="level" component="div" />
-            <FormControl mt={3} mb={3} isRequired>
-              <FormLabel
-                htmlFor="password"
-                size="lg"
-                fontSize={isLessThan400 ? "2x1" : "3xl"}
-              >
+            <FormControl mt={2} mb={2} isRequired>
+              <FormLabel htmlFor="level" fontSize="2xl">
                 Password
               </FormLabel>
               <InputGroup size="md">
