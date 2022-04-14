@@ -34,6 +34,7 @@ export const CourseListHeader = styled.div`
 
   @media only screen and (max-width: 800px) {
     height: 8vh;
+    font-size: 1.2rem;
   }
   @media only screen and (max-width: 600px) {
     height: 6vh;
@@ -80,6 +81,7 @@ export const CourseListContent = styled.div`
     @media only screen and (max-width: 600px) {
       margin-bottom: 1.3rem;
       font-size: 1.2rem;
+      width: 30vw;
     }
 
     .remove-btn {

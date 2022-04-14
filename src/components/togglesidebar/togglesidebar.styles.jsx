@@ -50,5 +50,5 @@ display: none;
 
 export const LogOutContainer = styled.div`
   fill: rgb(26, 83, 83);
-  transform: scale(2);
+  transform: scale(1.5);
 `;

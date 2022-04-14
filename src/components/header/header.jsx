@@ -10,7 +10,6 @@ import {
   ModalOverlay,
   Button,
   ModalContent,
-  Text,
   ModalFooter,
   ModalBody,
   ModalCloseButton,
@@ -103,7 +102,7 @@ const Header = ({ currentUser, setCurrentUser }) => {
           />
         </SidebarIcon>
       </HeaderRow>
-      {isIconOpen ? <ToggleSidebar setIconOpen={setIconOpen} /> : null}
+      {isIconOpen ? <ToggleSidebar setIconOpen={setIconOpen} currentUser={currentUser} setCurrentUser={setCurrentUser}/> : null}
     </div>
   );
 };

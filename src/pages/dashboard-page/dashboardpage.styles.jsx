@@ -17,7 +17,7 @@ export const DashboardContainer = styled.div`
     width: 95vw;
     margin: 0 0.8rem;
     padding: 1rem 0.5rem;
-    height: 110vh;
+    height: 100vh;
     justify-content: space-around;
   }
 
