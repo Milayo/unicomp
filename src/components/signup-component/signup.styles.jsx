@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SignUpContainer = styled.div`
   width: 100vw;
   background-color: #f1f1f2;
-  height: 100vh;
+  height: 57rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,11 +17,11 @@ export const SignUpContainer = styled.div`
     padding: 2rem;
     border-radius: 2rem;
     width: 50vw;
-    height: 90vh;
+    height: 55rem;
 
     @media only screen and (max-width: 800px) {
       width: 80vw;
-      height: 90vh;
+      height: 55rem;
     }
   }
 `;

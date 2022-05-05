@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProfileContainer = styled.div`
   background-color: #fff;
-  height: 70vh;
+  height: 46rem;
   width: 35vw;
   border-radius: 2rem;
   display: flex;
@@ -10,7 +10,7 @@ export const ProfileContainer = styled.div`
 
   @media only screen and (max-width: 800px) {
     width: 73vw;
-    height: 35vh;
+    height: 20rem;
     margin-bottom: 2rem;
   }
 
@@ -19,13 +19,13 @@ export const ProfileContainer = styled.div`
   }
   @media only screen and (max-width: 400px) {
     width: 95vw;
-    height: 40vh;
+    height: 40rem;
   }
 
   .edit-btn {
     align-self: flex-end;
-    margin-top: .5rem;
-     margin-right: .6rem;  
+    margin-top: 0.5rem;
+    margin-right: 1rem;
   }
 `;
 
@@ -33,7 +33,7 @@ export const ProfileSection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 60vh;
+  height: 40rem;
   align-items: center;
   text-align: center;
 
@@ -45,7 +45,7 @@ export const ProfileSection = styled.div`
   }
 
   @media only screen and (max-width: 400px) {
-    height: 40vh;
+    height: 20rem;
     flex-direction: column;
   }
 

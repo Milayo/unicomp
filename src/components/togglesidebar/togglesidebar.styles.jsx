@@ -15,12 +15,12 @@ display: none;
     }
 
     width: 60vw;
-    height: 100vh;
+    height: 58rem;
     top: 0;
     box-shadow: 0px 4px 8px rgb(0 0 0 / 16%);
     background-color: #fff;
     position: fixed;
-    z-index: 5;
+    z-index: 50;
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -39,10 +39,11 @@ display: none;
     .close-icon {
       font-size: 3rem;
       color: rgb(26, 83, 83);
-      margin: -6rem 0 10rem 20rem;
+      margin: 1rem 0 10rem 20rem;
 
       @media only screen and (max-width: 400px) {
-        margin: -6rem 0 10rem 13rem;
+        margin: 1rem 0 10rem 13rem;
+        font-size: 2.5rem;
       }
     }
   }

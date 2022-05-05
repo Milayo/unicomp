@@ -12,7 +12,7 @@ export const SignInContainer = styled.div`
     width: 100vw;
     display: ${({ display }) => (display ? "flex" : "none")};
 
-    height: 88vh;
+    height: 50rem;
   }
 
   @media only screen and (max-width: 800px) {
@@ -23,11 +23,11 @@ export const SignInContainer = styled.div`
     background-color: #fff;
     padding: 4rem;
     width: 40vw;
-    height: 55vh;
+    height: 35rem;
     border-radius: 2rem;
 
     @media only screen and (max-width: 1200px) {
-      height: 70vh;
+      height: 40rem;
       width: 70vw;
     }
 

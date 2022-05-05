@@ -43,14 +43,11 @@
 
 .metamaskpayment-content {
   background-color: #e5e5e5;
-  height: 88vh;
+  height: 58rem;
   padding: 2rem;
   margin: 0 0.5rem;
-  @media only screen and (max-width: 1000px) {
-    height: 90vh;
-  }
   @media only screen and (max-width: 800px) {
-    padding: 7rem;
+    padding: 5rem;
   }
 
   @media only screen and (max-width: 600px) {
@@ -65,16 +62,13 @@
   font-size: 1.3rem;
   width: 40vw;
   padding: 5rem;
-  height: 60vh;
+  height: 40rem;
   background-color: #fff;
   margin: 3rem auto;
   @media only screen and (max-width: 1200px) {
     width: 60vw;
-     height: 65vh;
+     height: 35rem;
     padding: 3rem;
-  }
-  @media only screen and (max-width: 800px) {
-   
   }
   @media only screen and (max-width: 600px) {
     width: 70vw;

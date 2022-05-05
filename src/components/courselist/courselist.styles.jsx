@@ -2,17 +2,18 @@ import styled from "styled-components";
 
 export const CourseListContainer = styled.div`
   background-color: #fff;
-  height: 70vh;
+  height: 46rem;
   width: 44vw;
   border-radius: 1rem;
 
   @media only screen and (max-width: 800px) {
     width: 73vw;
-    height: 45vh;
+    height: 30rem;
   }
 
   @media only screen and (max-width: 600px) {
     width: 91vw;
+    height: 40rem;
   }
   @media only screen and (max-width: 400px) {
     width: 95vw;
@@ -26,24 +27,24 @@ export const CourseListHeader = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 10vh;
+  height: 7rem;
   font-size: 1.5rem;
   text-transform: Uppercase;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 
   @media only screen and (max-width: 800px) {
-    height: 8vh;
+    height: 5rem;
     font-size: 1.2rem;
   }
   @media only screen and (max-width: 600px) {
-    height: 6vh;
+    height: 4rem;
   }
 `;
 
 export const CourseListContent = styled.div`
   overflow-y: auto;
-  height: 60vh;
+  height: 39rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -52,7 +53,7 @@ export const CourseListContent = styled.div`
 
   @media only screen and (max-width: 800px) {
     padding-top: 1.5rem;
-    height: 35vh;
+    height: 25rem;
   }
 
   &::-webkit-scrollbar {

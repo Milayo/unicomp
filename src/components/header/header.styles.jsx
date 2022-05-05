@@ -4,8 +4,9 @@ export const HeaderRow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+height: 7rem;
   @media only screen and (max-width: 600px) {
-    height: 10vh;
+    height: 5rem;
   }
 `;
 export const ImageContainer = styled.div`
@@ -26,7 +27,7 @@ export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   width: 25vw;
-  height: 8vh;
+  height: 7rem;
   padding: 1rem;
   @media only screen and (max-width: 1200px) {
     width: 60vw;
@@ -65,7 +66,7 @@ export const LogoText = styled.h4`
 export const ColoredSection = styled.div`
   background-color: rgb(144, 173, 173);
   width: 55vw;
-  height: 8vh;
+  height: 7rem;
 
   @media only screen and (max-width: 1200px) {
  display: none;
@@ -95,7 +96,7 @@ export const HeaderTitle = styled.h2`
 
 export const NotificationContainer = styled.div`
   background-color: rgb(26, 83, 83);
-  height: 8vh;
+  height: 7rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,7 +129,7 @@ export const WelcomeContainer = styled.div`
   color: white;
   fill: white;
   width: 20vw;
-  height: 8vh;
+  height: 7rem;
   display: flex;
   justify-content: center;
   align-items: center;

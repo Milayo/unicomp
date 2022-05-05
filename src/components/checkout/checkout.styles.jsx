@@ -5,7 +5,7 @@ import { Button } from "@chakra-ui/react";
 export const CheckoutComponentContainer = styled.div`
   background-color: #fff;
   font-size: 1.4rem;
-  height: 70vh;
+  height: 40rem;
   width: 50vw;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@ export const CheckoutButton = styled(PaystackButton)`
   justify-content: center;
   align-items: center;
   display: flex;
-  height: 6vh;
+  height: 5rem;
   font-weight: 500;
 
   @media only screen and (max-width: 800px) {
@@ -57,7 +57,7 @@ export const CryptoButton = styled(Button)`
   color: white !important;
   background-color: teal !important;
   border-radius: 0 !important;
-  height: 6vh !important;
+  height: 5rem !important;
   padding: 0.8rem 2rem !important;
   width: 18vw !important;
   font-size: 1.4rem !important;

@@ -3,10 +3,14 @@ import styled from "styled-components";
 
 export const SidebarContainer = styled.div`
   width: 10vw;
-  height: 89vh;
+  height: 58rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (max-width: 1000px) {
+    width: 13vw;
+  }
 
   @media only screen and (max-width: 800px) {
     width: 18vw;
@@ -14,9 +18,9 @@ export const SidebarContainer = styled.div`
 
   @media only screen and (max-width: 600px) {
     flex-direction: row;
-    z-index: 1;
+    z-index: 10;
     position: fixed;
-    height: 10vh;
+    height: 6rem;
     bottom: 0;
     justify-content: space-around;
     padding: 0 1.5rem;
@@ -36,7 +40,7 @@ export const SidebarContainer = styled.div`
 export const IconContainer = styled(Link)`
   display: flex;
   flex-direction: column;
-  height: 15vh;
+  height: 10rem;
   width: 10vw;
   cursor: pointer;
   color: ${({ active }) => (active ? "white" : "teal")};
@@ -46,14 +50,17 @@ export const IconContainer = styled(Link)`
   align-items: center;
   justify-content: center;
 
+  @media only screen and (max-width: 1000px) {
+    width: 13vw;
+  }
+
   @media only screen and (max-width: 800px) {
     width: 20vw;
   }
 
   @media only screen and (max-width: 600px) {
-    height: 10vh;
+    height: 6rem;
     width: 25vw;
-   
   }
 
   &:hover {

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PaymentContainer = styled.div`
   background-color: #f1f1f2;
   width: 90vw;
-  height: 92vh;
+  height: 58rem;
   font-size: 2rem;
   color: teal;
   padding: 10rem;

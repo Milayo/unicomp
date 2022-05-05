@@ -10,7 +10,7 @@ import {
   LogOutContainer,
 } from "./togglesidebar.styles";
 
-const ToggleSidebar = ({ setIsOpen, currentUser, setCurrentUser }) => {
+const ToggleSidebar = ({ setIconOpen, currentUser, setCurrentUser }) => {
   const auth = getAuth();
   let navigate = useNavigate();
 
@@ -29,7 +29,7 @@ const ToggleSidebar = ({ setIsOpen, currentUser, setCurrentUser }) => {
   };
   return (
     <ToggleSidebarContainer>
-      <CloseIcon className="close-icon" onClick={() => setIsOpen(false)} />
+      <CloseIcon className="close-icon" onClick={() => setIconOpen(false)} />
       <Avatar name={currentUser.name} size="2xl">
         <AvatarBadge boxSize="1.25em" bg="green.500" />
       </Avatar>
