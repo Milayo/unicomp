@@ -7,7 +7,6 @@ export const AcademicsPageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
 
   @media only screen and (max-width: 800px) {
     width: 82vw;
