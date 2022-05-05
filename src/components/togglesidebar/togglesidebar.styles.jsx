@@ -15,7 +15,7 @@ display: none;
     }
 
     width: 60vw;
-    height: 58rem;
+    height: 63rem;
     top: 0;
     box-shadow: 0px 4px 8px rgb(0 0 0 / 16%);
     background-color: #fff;

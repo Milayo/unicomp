@@ -25,7 +25,6 @@ export const SidebarContainer = styled.div`
     justify-content: space-around;
     padding: 0 1.5rem;
     background-color: #fff;
-
     width: 100vw;
   }
 

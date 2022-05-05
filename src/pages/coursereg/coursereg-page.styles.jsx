@@ -20,7 +20,7 @@ export const CoursePageContainer = styled.div`
 
   @media only screen and (max-width: 600px) {
     width: 100vw;
-    
+    height: 63rem;
     padding: 1.2rem;
   }
 `;

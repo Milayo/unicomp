@@ -24,5 +24,6 @@ export const PaymentContainer = styled.div`
   }
   @media only screen and (max-width: 600px) {
     width: 100vw;
+    height: 63rem;
   }
 `;

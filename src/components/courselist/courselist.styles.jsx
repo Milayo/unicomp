@@ -13,7 +13,7 @@ export const CourseListContainer = styled.div`
 
   @media only screen and (max-width: 600px) {
     width: 91vw;
-    height: 40rem;
+    height: 42rem;
   }
   @media only screen and (max-width: 400px) {
     width: 95vw;

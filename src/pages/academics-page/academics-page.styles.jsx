@@ -15,9 +15,6 @@ export const AcademicsPageContainer = styled.div`
     width: 100vw;
     align-items: flex-start;
     padding: 5rem 0;
-    height: 50rem;
-  }
-
-  @media only screen and (max-width: 400px) {
+    height: 63rem;
   }
 `;

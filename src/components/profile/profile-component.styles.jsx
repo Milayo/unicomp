@@ -10,7 +10,7 @@ export const ProfileContainer = styled.div`
 
   @media only screen and (max-width: 800px) {
     width: 73vw;
-    height: 20rem;
+    height: 21rem;
     margin-bottom: 2rem;
   }
 
