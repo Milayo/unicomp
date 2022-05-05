@@ -21,7 +21,7 @@ export const SignInSection = styled.div`
   }
 
   @media only screen and (max-width: 700px) {
-    height: 63rem;
+    height: 65rem;
   }
 
   .signin-btn {

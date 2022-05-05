@@ -21,7 +21,7 @@ export const DashboardContainer = styled.div`
   @media only screen and (max-width: 600px) {
     width: 100vw;
     padding: 2rem;
-    height: 63rem;
+    height: 65rem;
     justify-content: space-around;
   }
 
