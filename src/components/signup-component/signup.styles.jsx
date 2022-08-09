@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SignUpContainer = styled.div`
   width: 100vw;
   background-color: #f1f1f2;
-  height: 57rem;
+  height: 65rem;
   display: flex;
   justify-content: center;
   align-items: center;

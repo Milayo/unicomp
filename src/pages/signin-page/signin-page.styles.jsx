@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SignInSection = styled.div`
   width: 40vw;
-  height: 57rem;
+  height: 59rem;
   background-color: #003b46;
   text-align: center;
   display: flex;
