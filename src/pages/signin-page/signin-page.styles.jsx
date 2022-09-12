@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SignInSection = styled.div`
   width: 40vw;
   height: 59rem;
-  background-color: #003b46;
+  background-color: #39595f;
   text-align: center;
   display: flex;
   align-items: center;
@@ -21,7 +21,7 @@ export const SignInSection = styled.div`
   }
 
   @media only screen and (max-width: 700px) {
-    height: 65rem;
+    height: 100vh;
   }
 
   .signin-btn {
