@@ -63,6 +63,7 @@ const SignupComponent = ({}) => {
                 email,
                 password
               );
+              
               await createUserProfileDocument(
                 user,
                 matricno,

@@ -12,14 +12,13 @@ import {
 } from "@chakra-ui/react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/firebase.utils.js";
-import { Formik, Form, ErrorMessage } from "formik";
+import { Formik, ErrorMessage } from "formik";
 import { SignInContainer } from "./signin-component.styles.jsx";
 
 const SigninComponent = ({ display }) => {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
   const [isLessThan400] = useMediaQuery("(max-width: 400px)");
-    const [isLessThan800] = useMediaQuery("(max-width: 800px)");
 
   return (
     <SignInContainer display={display}>
@@ -72,7 +71,6 @@ const SigninComponent = ({ display }) => {
                 onChange={handleChange}
                 value={values.email}
                 htmlSize={1}
-                
                 fontSize={isLessThan400 ? "1x1" : "2xl"}
               />
             </FormControl>

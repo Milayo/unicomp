@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const SignInContainer = styled.div`
   width: 60vw;
-
   background-color: #f1f1f2;
   display: flex;
   justify-content: center;
@@ -11,7 +10,6 @@ export const SignInContainer = styled.div`
   @media only screen and (max-width: 1200px) {
     width: 100vw;
     display: ${({ display }) => (display ? "flex" : "none")};
-
     height: 50rem;
   }
 

@@ -9,15 +9,14 @@ import { Button, Text } from "@chakra-ui/react";
 
 const CourseList = () => {
   const [regCourses, setRegCourses] = useState([]);
-   const [isEditing, setIsEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleBtn = (itemId) => {
-    const newRegCourses = regCourses
-      .filter((item) => itemId !== item.id);
-    setRegCourses(newRegCourses)
-    localStorage.setItem("Course Lists", JSON.stringify(newRegCourses))
-  }
-  
+    const newRegCourses = regCourses.filter((item) => itemId !== item.id);
+    setRegCourses(newRegCourses);
+    localStorage.setItem("Course Lists", JSON.stringify(newRegCourses));
+  };
+
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("Course Lists"));
     if (items) {
